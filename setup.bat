@@ -8,6 +8,14 @@ if not exist venv (
 
 )
 
+rem Check if the .env file exists
+if not exist .env (
+
+    echo "No .env file found."
+    exit /b
+
+)
+
 rem Activate the environment
 call venv\Scripts\activate
 

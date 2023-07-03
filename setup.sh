@@ -8,6 +8,12 @@ if [ ! -f venv ]; then
 
 fi
 
+if [! -f .env]; then
+
+    echo "no .env file"
+    exit1
+f1
+
 # Activate the environment
 source venv/bin/activate
 
