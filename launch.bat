@@ -20,4 +20,4 @@ if not exist app.py (
 )
 
 rem Launch the app.py file
-python app.py
+python -m streamlit run app.py

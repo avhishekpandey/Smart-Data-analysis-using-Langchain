@@ -20,4 +20,4 @@ if [ ! -f app.py ]; then
 fi
 
 # Launch the app.py file
-python app.py
+python -m streamlit run app.py
