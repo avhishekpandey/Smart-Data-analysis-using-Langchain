@@ -1,1 +1,1 @@
-# Smart-Business-analysis-using-Langchain
+# Smart-Data-analysis-using-Langchain
