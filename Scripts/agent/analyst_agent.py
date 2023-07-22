@@ -1,12 +1,10 @@
-from langchain import OpenAI
+import streamlit as st
+from langchain.llms import GPT4All
 from langchain.agents import create_pandas_dataframe_agent
 import pandas as pd
-import environ
+from langchain.callbacks.streamlit import StreamlitCallbackHandler
 
-env = environ.Env()
-environ.Env.read_env()
 
-API_KEY = env("apikey")
 
 
 def create_agent(filename: str):
@@ -19,7 +17,8 @@ def create_agent(filename: str):
     Returns:
         An agent that can access and use the LLM.
     """
-    llm = OpenAI(openai_api_key=API_KEY)
+    callbacks = [StreamlitCallbackHandler(st.container())]
+    llm = GPT4All(model="../../wizardlm-13b-v1.1-superhot-8k.ggmlv3.q4_0.bin")
 
     df = pd.read_csv(filename)
 
